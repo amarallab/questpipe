@@ -46,7 +46,7 @@ Fabric has these tasks:
     fab -u <username> load_quest:~/src/questpipe sync
     `
 
-* qb_run: runs the pipeline of the argument.
+* qp_run: runs the pipeline of the argument.
 
     `
     fab -u <username> load_quest:~/src/questpipe qp_run:my_pipeline,my_arg1,my_arg2,my_arg3...
@@ -103,13 +103,13 @@ In this example, a pipeline is created using different parameters. It is not cre
         pipeline.save_state("{rundir}/pipeline.json")
         print(pipeline.parse_string("The pipeline results are stored on {rundir}"))
 
-NOTE: You should use the fullpath to this file when you call the `qb_run` task and copy this file 
+NOTE: You should use the fullpath to this file when you call the `qp_run` task and copy this file 
       to your quest folder. Otherwise, you can save this file in the questpipe folder and sync it
       using the `sync` task. 
 
 To run the pipeline:
 
-    fab -u <user> load_quest:~/src/questpipe sync qb_run:simple_pipeline
+    fab -u <user> load_quest:~/src/questpipe sync qp_run:simple_pipeline
 
 The console message will be something like:
 
