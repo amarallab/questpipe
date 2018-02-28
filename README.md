@@ -188,7 +188,7 @@ NOTE: Please, change the `-A` and `-q` parameters of the qp.Arguments object.
 
 To run the pipeline:
 
-    fab -u <user> load_quest:~/src/questpipe sync qb_run:qp_test,three_tasks
+    fab -u <user> load_quest:~/src/questpipe sync qp_run:qp_test,three_tasks
 
 This pipeline creates a folder called "three_tasks" on your home folder and stores all the
 data inside.
@@ -224,6 +224,36 @@ When the pipeline finishes, they will appear these files on the three_tasks fold
 Based on CETO pipeline [2], you can find the pipeline `seq_pipeline.py` that converts from BCL to FASQ files, creates FASTQC files, alignes, and creates a count file.
 
 [2] https://github.com/ebartom/NGSbartom
+
+
+## Hints
+
+### async_run
+
+The command `async_run` schedules the job immediatelly. Sometimes, the MOAB scheduler starts the execution, running the job faster than
+the pipeline preparing other jobs. If you define the first job as a dependence of other, you will receive an error because the dependence
+finished before scheduling the second job. To avoid this behavor, call `prepare_async_run` on the first job and `unhold` it at the end
+of the pipeline definition.
+
+### Jupyter notebook
+
+You can use a notebook to run, checkjobs and abort pipelines. To do this, you just need to run the fabric command on a notebook cell
+using the `!` command:
+
+    !fab -u XXX load_quest:~/src/questpipe qp_checkjobs:~/three_tasks
+
+    [quest.northwestern.edu] Executing task 'qp_checkjobs'
+    [quest.northwestern.edu] run: module load python/anaconda3.6 ; python3.6 qp_checkjobs.py ~/three_tasks
+    [quest.northwestern.edu] out: Completed: 3
+    [quest.northwestern.edu] out: Running:   0
+    [quest.northwestern.edu] out: Idles:     0
+    [quest.northwestern.edu] out: 
+
+
+    Done.
+    Disconnecting from quest.northwestern.edu... done.
+
+
 
 ## Version status
 
