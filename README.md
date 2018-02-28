@@ -52,13 +52,13 @@ Fabric has these tasks:
     fab -u <username> load_quest:~/src/questpipe qp_run:my_pipeline,my_arg1,my_arg2,my_arg3...
     `
 
-* checkjobs: checks if the jobs of the pipeline are completed.
+* qp_checkjobs: checks if the jobs of the pipeline are completed.
 
     `
     fab -u <username> load_quest:~/src/questpipe qp_checkjobs:file_of_the_pipeline
     `
 
-* abort_pipeline: aborts all the jobs of the pipeline:
+* qp_abort: aborts all the jobs of the pipeline:
 
     `
     fab -u <username> load_quest:~/src/questpipe qp_abort:file_of_the_pipeline
