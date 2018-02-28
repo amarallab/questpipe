@@ -1,12 +1,12 @@
 # QUESTPIPE
 
-Submit jobs to Quest MOAB scheduler integrating it in your awesome python code.
+Submit jobs to Quest's MOAB scheduler directly from your awesome python code.
 
 
 ## Install
 
 * clone the code on your computer.
-* create a virtualenv using Python 3.2 or newer.
+* create a virtual environment using Python 3.2 or newer.
 * install the packages listed on requirements.txt
 
 ## Structure
@@ -15,8 +15,8 @@ After cloning the repo, the questpipe code will be stored on your computer, but,
 change the code (pull code from github, modify your pipeline...), you should synchronize your local copy and the
 Quest home code.
 
-When you are running your code on Quest, all the data should be on your Quest home or accessible online. Remember, the code you
-are running on Quest cannot access to your computer local data. On the other hand, your results will be stored on Quest
+When you are running your code on Quest, all the data should be on your Quest home directory or accessible online. Remember, the code you
+are running on Quest cannot access your computer local data. On the other hand, your results will be stored on Quest
 and you should copy it back to your computer.
 
 
@@ -77,7 +77,7 @@ Fabric uses SSH Key to connect to quest. To do this, create or use a SSH key pai
 
 Just a few examples.
 
-### Example 1: just a pipeline
+### Example 1: linear pipeline
 
 In this example, a pipeline is created using different parameters. It is not creating jobs:
 
@@ -126,7 +126,7 @@ The result:
     [quest.northwestern.edu] out: Idles:     0
 
 
-### Example 2: Three tasks sync
+### Example 2: Synchronize three tasks
 
 The file `qp_test.py` is a simple pipeline that synchronize three tasks:
 
@@ -193,7 +193,7 @@ To run the pipeline:
 This pipeline creates a folder called "three_tasks" on your home folder and stores all the
 data inside.
 
-To check if the jobs are done:
+To check, if the jobs are done:
 
     fab -u <user> load_quest:~/src/questpipe sync qp_checkjobs:~/three_tasks
 
@@ -219,7 +219,7 @@ When the pipeline finishes, they will appear these files on the three_tasks fold
     `third_task`
 
 
-### Example 3: seq pipeline
+### Example 3: RNA sequencing pipeline
 
 Based on CETO pipeline [2], you can find the pipeline `seq_pipeline.py` that converts from BCL to FASQ files, creates FASTQC files, alignes, and creates a count file.
 
