@@ -11,11 +11,11 @@ Submit jobs to Quest's MOAB scheduler directly from your awesome python code.
 
 ## Structure
 
-After cloning the repo, the questpipe code will be stored on your computer, but, also, it should be on your Quest home. Be careful, everytime you
+After cloning the repo, the questpipe code will be stored on your computer, but, also, it should be on your Quest home. Be careful, every time you
 change the code (pull code from github, modify your pipeline...), you should synchronize your local copy and the
 Quest home code.
 
-When you are running your code on Quest, all the data should be on your Quest home directory or accessible online. Remember, the code you
+When you are running your code on Quest, all data should be on your Quest home directory or accessible online. Remember, the code you
 are running on Quest cannot access your computer local data. On the other hand, your results will be stored on Quest
 and you should copy it back to your computer.
 
@@ -103,7 +103,7 @@ In this example, a pipeline is created using different parameters. It is not cre
         pipeline.save_state("{rundir}/pipeline.json")
         print(pipeline.parse_string("The pipeline results are stored on {rundir}"))
 
-NOTE: You should use the fullpath to this file when you call the `qp_run` task and copy this file 
+NOTE: You should use the full path to this file when you call the `qp_run` task and copy this file 
       to your quest folder. Otherwise, you can save this file in the questpipe folder and sync it
       using the `sync` task. 
 
@@ -203,7 +203,7 @@ The result:
     [quest.northwestern.edu] out: Running:   0
     [quest.northwestern.edu] out: Idles:     3
 
-When the pipeline finishes, they will appear these files on the three_tasks folder:
+When the pipeline finishes, these files will appear on the three_tasks folder:
 
 * first_task.oNUMBER: output of the first task
 * second_task.oNUMBER: output of the second task
@@ -258,4 +258,4 @@ using the `!` command:
 ## Version status
 
 This code was used successfully aligning and analyzing mRNA sequences. It will be great if you
-use it and give us your feedback. Also, you are really welcome to improve it!
+give us feedback after you use it. Also, you are really welcome to improve it!
