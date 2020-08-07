@@ -2,6 +2,7 @@
 
 Submit jobs to Quest's MOAB scheduler directly from your awesome python code.
 
+**Warning!** Quest is now running SLURM scheduler and this project is not maintained.
 
 ## Install
 
