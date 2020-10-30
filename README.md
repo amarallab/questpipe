@@ -4,6 +4,8 @@ Submit jobs to Quest's MOAB scheduler directly from your awesome python code.
 
 **Warning!** Quest is now running SLURM scheduler and this project is not maintained.
 
+**Warning!** Stop using this project and move to *nextflow* or similar software.
+
 ## Install
 
 * clone the code on your computer.
